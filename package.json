@@ -5,6 +5,7 @@
 	"repository": "http://github.com/shadowfacts/pst",
 	"dependencies": {
 		"express": "4.*.*",
-		"ejs": "*"
+		"ejs": "*",
+		"morgan": "*"
 	}
 }
