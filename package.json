@@ -1,0 +1,10 @@
+{
+	"name": "pst",
+	"version": "0.0.1",
+	"description": "pst is a simple implementation of pastebin.",
+	"repository": "http://github.com/shadowfacts/pst",
+	"dependencies": {
+		"express": "4.*.*",
+		"ejs": "*"
+	}
+}
