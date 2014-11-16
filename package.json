@@ -2,7 +2,14 @@
 	"name": "pst",
 	"version": "0.0.1",
 	"description": "pst is a simple implementation of pastebin.",
-	"repository": "http://github.com/shadowfacts/pst",
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/shadowfacts/pst"
+	},
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js"
+	},
 	"dependencies": {
 		"express": "4.*.*",
 		"ejs": "*",
@@ -10,5 +17,9 @@
 		"serve-favicon": "*",
 		"body-parser": "*",
 		"multer": "*"
-	}
+	},
+	"engines": {
+		"node": "0.10.*"
+	},
+	"license": "MIT"
 }
