@@ -28,20 +28,36 @@ app.get('/', function(req, res) {
 
 app.post('/', function(req, res) {
 	console.log('Creating pst: ' + req.param('name'));
-	var pstPath = path.join(path.join(__dirname, 'pst'), req.param('name'));
-	fs.exists(pstPath, function(exists) {
+
+	fs.exists(path.join(__dirname, 'pst'), function(exists) {
 		if (!exists) {
-			fs.writeFile(pstPath, req.param('data'), function(err) {
-				if (!err) {
-					res.redirect('/pst/' + req.param('name'));
-				} else {
-					res.render('error', { title: 'pst', error: err });
-				}
-			});
-		} else {
-			res.render('alreadyExists', { title: req.param('name') + ' | pst', pstName: req.param('name') });
+			fs.mkdirSync(path.join(__dirname, 'pst'));
 		}
+
+		var pstPath = path.join(path.join(__dirname, 'pst'), req.param('name'));
+		fs.exists(pstPath, function(exists) {
+			if (!exists) {
+				fs.writeFile(pstPath, req.param('data'), function(err) {
+					if (!err) {
+						res.redirect('/pst/' + req.param('name'));
+					} else {
+						res.render('error', { title: 'pst', error: err });
+					}
+				});
+			} else {
+				res.render('alreadyExists', { title: req.param('name') + ' | pst', pstName: req.param('name') });
+			}
+		});
 	});
+	
+});
+
+app.get('/pst', function(req, res) {
+	res.redirect('/');
+});
+
+app.get('/pst/', function(req, res) {
+	res.redirect('/');
 });
 
 app.get('/pst/:name', function(req, res) {
