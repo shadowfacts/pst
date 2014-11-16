@@ -72,7 +72,7 @@ app.get('/pst/:name', function(req, res) {
 				}
 			});
 		} else {
-			res.render('doesNotExists', { title: req.params.name + ' | pst', pstName: req.params.name });
+			res.render('doesNotExist', { title: req.params.name + ' | pst', pstName: req.params.name });
 		}
 	});
 });
