@@ -1,3 +1,13 @@
 <% include header.ejs %>
 
+<form action="/", method="POST">
+	<label for="name">pst name:</label> <input type="text" name="name" id="name" required>
+	<br>
+	<label for="data">pst data:</label>
+	<br>
+	<textarea name="data" id="data" cols="250" rows="50" required></textarea>
+	<br>
+	<input type="submit" value="create pst">
+</form>
+
 <% include footer.ejs %>
