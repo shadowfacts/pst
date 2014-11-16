@@ -6,6 +6,7 @@
 	"dependencies": {
 		"express": "4.*.*",
 		"ejs": "*",
-		"morgan": "*"
+		"morgan": "*",
+		"serve-favicon": "*"
 	}
 }
